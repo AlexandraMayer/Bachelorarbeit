@@ -1,0 +1,56 @@
+\documentclass[a4paper, 12pt]{scrartcl}
+
+\input{packages}
+
+\title{Essay - Modeling passenger exchange for simulations of pedestrian dynamics }
+\author{Alexandra Mayer}
+\date{09.03.2019}
+
+\begin{document}
+\maketitle
+Public transport systems get more and more important with the urbanization of the world . The more people live in the city, the more people will rely on public transport to get to their destination. Streets are full and you will often be stuck in traffic if you want to get somewhere in the peak hours, for instance while driving to and from work, the public transport system could be a good alternative. With all this people using public transport, it is important that the train stations are build in a way that people arrive at their destination efficiently and that bottlenecks and overcrowding of station platforms will be prevented.\newline
+So for public transport organization, like the DB (Deutsche Bahn), it is important to consider all this people when planing a new station or timetables. That may be the reason why the Deutsche Bahn worked with the company accu:rate, my employer for this bachelor thesis, to build the 2nd S-Bahn main line at the Munich central station. Accu:rate is an institute for crowd simulation, which provides pedestrian flow analysis for their clients. The planing of the stations for the 2nd S-Bahn main line did consider the pedestrian flow analysis to make sure that the passengers feel comfortable when using the new stations and there will be no problem when a station has to be evacuated. 
+\newline
+Due to this project with the DB the behavior of passengers at stations has already be modeled by accu:rate. One aspect of this behavior the passenger exchange was modeled with a workaround. The time the alighting people need to get of the train was calculated before the simulation starts. This time will be used to inform the Agents boarding the train about the time they have to stay in implemented waiting areas, which are left and right by the doors. After the waiting time people start to board the train until the time the train stops is over.
+\newline
+This workaround solution works good if you model the behavior outside of peak hours, but due to personal experience the hypothesis can be made that the behavior differs from this model. In peak hours I often encountered, that you have to push people aside to alight the train because they don't stay on the sides of the doors or people trying to get inside the train before all people got outside. If this experiences are really true, how often different behavior patterns occur and if the described patterns really just happen in peak hours are questions that will be answered in my thesis. 
+\newline
+Another problem of the workaround are the costs to calculate the alighting time, because its quiet expensive. For the new model I will search for a better solution than calculating the waiting time beforehand. Agents can be triggered to start an action, like boarding the train. This may help to build an more efficient model. An idea would be, that the last person alighting the train will trigger the waiting agents to start boarding the train.
+\newline
+I will start with observing the exchange behavior on big stations during and outside of peak hours to create a new model and a new model will be created with the analysis of the observed data. The objective of the thesis will be to implement the model in the software solution of accu:rate, which is called crowd:it. To simulate agents in an environment you first have to create a plan of the environment. This plans can be generated in CAD software and then imported into crowd:it. After importing the plan you can assign functions to Simulation Objects, like origin, destination, waiting zone, etc. After this you can start the simulation and visualize it. For this software an option for exchange behavior should be implemented and the problem of the costly calculation for the alight time will tried to be solved, maybe with the application of triggers.
+\newline
+After creating an model an implementing it, the model has to be validated. This validation will be done visually. A validated efficient model could be useful to create better pedestrian flow simulations of railway stations and therefore be used in future projects with public transport organizations.
+
+\newpage
+\textbf{Table of Contents}
+\begin{enumerate}
+	\item Introduction
+	\begin{enumerate} [label*=\arabic*.]
+		\item Motivation
+		\item Sate of the art
+	\end{enumerate}
+	\item Data collection
+	\item Model
+	\begin{enumerate} [label*=\arabic*.]
+		\item Passenger exchange model
+		\item Data analysis
+		\item Algorithm
+		\item Model parameters
+		\item Summary
+	\end{enumerate}
+	\item Software
+	\begin{enumerate} [label*=\arabic*.]
+		\item Introduction to crowd:it
+		\item Implementation of the model
+		\item Summary
+	\end{enumerate}
+	\item Model evaluation
+	\begin{enumerate} [label*=\arabic*.]
+		\item Model verification
+		\item Visual validation
+		\item Summary
+	\end{enumerate}
+	\item Conclusion and outlook
+\end{enumerate}
+
+\end{document}
