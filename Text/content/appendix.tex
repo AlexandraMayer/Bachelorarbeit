@@ -1,0 +1,215 @@
+\begin{appendix}
+\chapter{Statistik} \label{Statistik}
+\section{Lineare Regression} \label{append:LinReg}
+In der linearen Regression soll der systematische Einfluss der erklärenden Variablen $x_1, \ldots, x_k$ auf die Zielvariable $y$ untersucht werden (\cite{Fahrmeir.2009}).
+
+Bei der lineare Regression wird die Zielgröße $y$ jedoch nicht exakt als Funktion $f(x_1, \ldots x_k)$ von $x_1, \ldots, x_k$ angegeben, sondern ist eine Zufallsvariable deren Verteilung von der erklärenden Variable abhängt. "`Ein Hauptziel der Regressionsanalyse besteht somit darin, den Einfluss der erklärenden Variable auf den Mittelwert der Zielgröße zu untersuchen."' \cite{Fahrmeir.2009} Im linearen Regressionsmodellen wird unterstellt, dass die Funktion $f$, in Bezug auf $\beta_0, \ldots \beta_k$ linear, ist. Aus der Linearität ergibt sich die Funktion: 
+$$ y = \beta_0 + \beta_1x_1 + \cdots + \beta_kx_k + \varepsilon_i $$
+Es ist jedoch zu beachten, dass eine lineare Regression auch bei einer nicht linearen Beziehung durchgeführt werden kann. Dabei wird der nicht lineare Anteil mit den erklärenden Variablen dargestellt. So kann $x_1$ \zB durch den nicht linearen Anteil $x_1 = \log(z)$ ersetzt werden.
+Die Parameter $\beta_0, \ldots, \beta_k$ werden dann basierend auf den Beobachtungen $(y_i, x_{i1}, \\ \ldots, x_{ik}) \ i=1, \ldots, n$ mit der Methode der kleinsten Quadrate so geschätzt, dass die Summe der quadrierten Abweichungen 
+$$ \sum_{i=1}^{n}(y_i - \beta_0 - \beta_1x_{i1} - \cdots - \beta_kx_{ik})^2$$
+der Beobachtungen $y_i$ von der Regressionsgeraden $\beta_0 + \beta_1x_{i1} + \cdots + \beta_kx_{ik}$ minimal wird (\cite{Fahrmeir.2009}).\\
+Die geschätzten Parameter, die durch die Methode der kleinsten Quadrate geschätzt wurden, werden $\hat{\beta_0}, \ldots, \hat{\beta_k}$ bezeichnet. Setzt man die Schätzparameter in die Regressionsfunktion ein, so erhält man die geschätzte Regressionsfunktion:
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}x_1 + \cdots + \hat{\beta_k} + x_k$$ (\cite{Fahrmeir.2009})
+\section{Logistische Regression} \label{append:LogReg}
+Die logistische Regression ist eine Regression, die auf dem Logit-Modell beruht. Die Zielvariable im Logit-Modell ist binär (\cite{Fahrmeir.2009}).
+Der Erwartungswert der binären Zielvariable $y$ ist dann gegeben durch:
+$$\text{E}(y) = P(y=0) \cdot 0 + P(y=1) \cdot 1 = P(y=1)$$
+Das Ziel der Regressionsanalyse ist also die Modellierung und Analyse der Wahrscheinlichkeit
+$$P(y=1) = P(y=1 \mid x_1, \ldots, x_k) = \pi$$ 
+in Abhängigkeit von den Kovariablen (\cite{Fahrmeir.2009}).
+Ein lineares Modell lässt für $P(y_i=1)$ auch Werte $\pi_i < 0$ und $\pi_i > 1$ zu, was für Wahrscheinlichkeit nicht zulässig ist.
+Dieses Problem kann gelöst werden, wenn man das Modell 
+$$ \pi_i = P(y_i=1) = F(\beta_0 + \beta_1x_{i1} + \cdots + \beta_kx_{ik}$$
+annimmt, wobei der Wertebereich der Funktion $F$ im Intervall $[0, 1]$ liegen soll. "`Wählt man die logistische Verteilungsfunktion 
+$$F(\eta) = \frac{\exp(\eta)}{1+\exp(\eta)},$$
+so erhält man das Logit-Modell
+$$P(y_i = 1) = \frac{\exp(\eta_i)}{1+\exp(\eta_i)} $$
+mit dem linearen Prädikator
+$$\eta_i = \beta_0 + \beta_ix_{i1} + \cdots + \beta_kx_{ik}$$"'
+\cite{Fahrmeir.2009} \\
+\section{Signifikanzniveau} \label{append:Signifikanzniveau}
+Das Signifikanzniveau gibt vor, welchen Wert der Wahrscheinlichkeit man als extrem unwahrscheinlich versteht. Im Fall der Hypothesentest wäre das die Wahrscheinlichkeit, dass die Werte für die Variablen unter der $H_0$ Hypothese zustande gekommen sind. Übliche Werte für $\alpha$ sind 0.01, 0.05 oder auch 0.1 (\cite{Fahrmeir.2011}).
+\section{Bestimmtheitsmaß} \label{append:rsquared}
+Um die Anpassung einer Regression an die Daten zu überprüfen wird das Bestimmtheitsmaß verwendet. Es wird mit $R^2$ bezeichnet und ist definiert durch
+\begin{equation}
+R^2 = 
+\frac{\sum_{i=1}^{n}(\hat{y_i}-\bar{y})^2}{\sum_{i=1}^{n}(y_i-\bar{y})^2} = 1- \frac{\sum_{i=1}^n \hat{\varepsilon}_i^2}{\sum_{i=1}^{n}(y_i-\bar{y})^2},
+\end{equation}
+wobei $\hat{y_i}$ die Schätzung von $y_i$ bezeichnet. $\hat{\varepsilon}_i$ bezeichnet den Schätzfehler, also der Abweichung des Schätzwertes $\hat{y}_i$ vom wahren Wert $y_i$ der als Residuum bezeichnet wird. Der Mittelwert der beobachteten Werte wird hier mit $\bar{y}$ bezeichnet und wie folgt berechnet:
+$$ \bar{y} =\frac{1}{n} \sum_{i=1}^n y_i $$ 
+Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für das Bestimmtheitsmaß gilt: "`Je näher das Bestimmtheitsmaß bei 1 liegt, desto kleiner ist die Residuenquadratsumme und desto besser die Anpassung an die Daten."' (\cite{Fahrmeir.2009}:99).
+\chapter{Ausschnitte der Tabellen}
+\section{Tabelle der Fahrgastwechselzeiten}
+\DTLloadrawdb{times}{../Tabellen_Notebooks/Tabels/Times.csv}
+\begin{sidewaystable}[h!]
+	\centering
+	\begin{tabular}{ |p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.9 cm} p{1.9 cm} p{2.2 cm} p{1 cm} p{1 cm}|}
+		\hline
+		\bfseries Video & \bfseries arrival time & \bfseries station & \bfseries core alight  & \bfseries later alight & \bfseries core boarding & \bfseries later boarding & \bfseries spacemaker & \bfseries core time & \bfseries time \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{times}%{}{}%
+		{\video=Video,\aa=arrival time,\ab=station,\sp=core alight,\be=later alight,\b=core boarding,\s=later boarding,\d=spacemaker,\iw=core time,\t=time}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
+	\end{tabular} \\
+	\begin{tabular}{|p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.9 cm} p{1.9 cm} p{2.2 cm} p{1 cm} p{1 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3183}]{times}
+		{\video=Video,\aa=arrival time,\ab=station,\sp=core alight,\be=later alight,\b=core boarding,\s=later boarding,\d=spacemaker,\iw=core time,\t=time}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}			\\
+		\hline
+	\end{tabular}
+	\caption{Fahrgastwechselzeiten Tabelle: Zusatzmaterial \textsl{Times.csv} }
+	\label{tab:times}
+\end{sidewaystable}
+\clearpage
+\section{Tabellen der Gruppen}
+\subsection{Tabelle der Gruppen für Aussteiger}
+\DTLloadrawdb{aGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsAlight.csv}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+		\hline
+		\bfseries Video & \bfseries 1 & \bfseries 2 & \bfseries 3  & \bfseries 4 & \bfseries 5 & \bfseries 6  & \bfseries 11 \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{aGroup}%{}{}%
+		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=11}
+		{
+		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}
+	\end{tabular} \\
+	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3185}]{aGroup}
+		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=11}
+		{
+		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}\\
+		\hline
+	\end{tabular}
+	\caption{Anzahl der Gruppen mit bestimmter Größe für Aussteiger Tabelle: Zusatzmaterial \textsl{GroupsAlight.csv} }
+	\label{tab:groupsAS}
+\end{table}
+\subsection{Tabelle der Gruppen für Einsteiger}
+\DTLloadrawdb{bGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsBoarding.csv}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+		\hline
+		\bfseries Video & \bfseries 1 & \bfseries 2 & \bfseries 3  & \bfseries 4 & \bfseries 5 & \bfseries 6  & \bfseries 7 \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{bGroup}%{}{}%
+		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=7}
+		{
+		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}
+	\end{tabular} 
+	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3185}]{bGroup}
+		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=7}
+		{
+		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}\\
+		\hline
+	\end{tabular}
+	\caption{Anzahl der Gruppen mit bestimmter Größe für Einsteiger Tabelle: Zusatzmaterial \textsl{GroupsBoarding.csv} }
+	\label{tab:groupsES}
+\end{table}
+\subsection{Tabelle der Gruppen für Platzmacher}
+\DTLloadrawdb{sGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsSpacemaker.csv}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3 cm} p{3 cm} p{3 cm} |}
+		\hline
+		\bfseries Video & \bfseries 1 & \bfseries 2  \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{sGroup}%{}{}%
+		{\video=Video,\aa=1,\ab=2}
+		{
+		\\\video & \aa & \ab}
+	\end{tabular} \\
+	\begin{tabular}{|p{3 cm} p{3 cm} p{3 cm} |}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots 
+		\DTLforeach*[\DTLisgt{\video}{3185}]{sGroup}
+		{\video=Video,\aa=1,\ab=2}
+		{
+		\\\video & \aa & \ab}\\
+		\hline
+	\end{tabular}
+	\caption{Anzahl der Gruppen mit bestimmter Größe für Platzmacher Tabelle: Zusatzmaterial \textsl{GroupsSpacemaker.csv} }
+	\label{tab:groupsPM}
+\end{table}
+\section{Tabelle der Verhaltensweisen und Merkmale}
+\DTLloadrawdb{Verhalten}{../Tabellen_Notebooks/Tabels/Behaviors.csv}
+\begin{sidewaystable}[h!]
+	\centering
+	\begin{tabular}{ |p{1.05 cm} p{1.5 cm} p{2.7 cm} p{2.5 cm} p{2 cm} p{1 cm} p{0.7 cm} p{1.7 cm} p{1.5 cm} p{1.2 cm}|}
+		\hline
+		\bfseries Video & \bfseries alight & \bfseries boarding & \bfseries spacemaker  & \bfseries boarding early & \bfseries bulky & \bfseries slow & \bfseries distracted  & \bfseries in way & \bfseries time \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{Verhalten}%{}{}%
+		{\video=Video,\aa=alight,\ab=boarding,\sp=spacemaker,\be=boarding early,\b=bulky,\s=slow,\d=distracted,\iw=in way,\t=time}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
+	\end{tabular} \\
+	\begin{tabular}{|p{1.05 cm} p{1.5 cm} p{2.7 cm} p{2.5 cm} p{2 cm} p{1 cm} p{0.7 cm} p{1.7 cm} p{1.5 cm} p{1.2 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3183}]{Verhalten}
+		{\video=Video,\aa=alight,\ab=boarding,\sp=spacemaker,\be=boarding early,\b=bulky,\s=slow,\d=distracted,\iw=in way,\t=time}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}\\
+		\hline
+	\end{tabular}
+	\caption{Verhaltenstabelle: Zusatzmaterial \textsl{Behaviors.csv} }
+	\label{tab:Vehalten}
+\end{sidewaystable}
+\clearpage
+\section{Tabelle der Typen}
+\DTLloadrawdb{Types}{../Tabellen_Notebooks/Tabels/PeopleTypes.csv}
+\begin{sidewaystable}[h!]
+	\centering
+	\begin{tabular}{ |p{1 cm} p{1.9 cm} p{1.9 cm} p{1.9 cm} p{2.1 cm} p{1.9 cm} p{2.1 cm} p{1.6 cm} p{1.5 cm} p{1.5 cm}|}
+		\hline
+		\bfseries Video & \bfseries boarding defensive & \bfseries alight defensive & \bfseries space-maker defensive  & \bfseries boarding aggressive & \bfseries alight aggressive & \bfseries space-maker aggressive & \bfseries boarding normal  & \bfseries alight normal & \bfseries space-maker normal \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{Types}%{}{}%
+		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
+	\end{tabular} \\
+	\begin{tabular}{|p{1 cm} p{1.9 cm} p{1.9 cm} p{1.9 cm} p{2.1 cm} p{1.9 cm} p{2.1 cm} p{1.6 cm} p{1.5 cm} p{1.5 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3183}]{Types}
+		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}\\
+		\hline
+	\end{tabular}
+	\caption{Typen von Prozesstypen: Zusatzmaterial \textsl{PeopleTypes.csv} }
+	\label{tab:Types}
+\end{sidewaystable}
+\clearpage
+\section{Tabelle der Startzeiten}
+\DTLloadrawdb{Startingtime}{../Tabellen_Notebooks/Tabels/TimeAfterDoorOpening.csv}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{2 cm} p{2 cm} p{2 cm} p{2 cm} p{2 cm}|}
+		\hline
+		\bfseries Video & \bfseries Type & \bfseries Opening & \bfseries First step  & \bfseries Time \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<10]{Startingtime}%{}{}%
+		{\video=Video,\aa=Type,\ab=Opening,\sp=First step,\be=Time}
+		{
+		\\\video & \aa & \ab & \sp & \be}
+	\end{tabular} \\
+	\begin{tabular}{|p{2 cm} p{2 cm} p{2 cm} p{2 cm} p{2 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3185}]{Startingtime}
+		{\video=Video,\aa=Type,\ab=Opening,\sp=First step,\be=Time}
+		{
+		\\\video & \aa & \ab & \sp & \be}\\
+		\hline
+	\end{tabular}
+	\caption{Startzeiten der Aussteiger für verschiedene Typen: Zusatzmaterial \textsl{TimeAfterDoorOpening.csv} }
+	\label{tab:Startingtime}
+\end{table}
+\end{appendix}

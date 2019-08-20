@@ -1,0 +1,99 @@
+\documentclass[
+							a4paper, 
+							12pt, 
+							openany, 
+							bibtotoc, 
+							%liststotoc,
+							parskip=half, 
+   							headings=normal,
+   							bibliography=totoc
+						]{scrreprt}
+% all needed packages %
+\input{packages}
+\onehalfspacing 
+
+
+% all needed commands %
+\input{commands}
+\input{meta}
+\lstset{style=mystyle}
+
+\begin{document}
+
+% headline and footline %
+\input{headfoot}
+
+% title page%
+\input{titlepage}
+
+\newpage
+%\thispagestyle{empty}
+\mbox{}
+
+\begin{abstract}
+\section*{\centering Zusammenfassung} \label{Zusammenfassung}
+Fußgängersimulationen können in verschiedenen Gebieten, wie in der Gebäude- und Eventplanung oder im öffentlichen Personennahverkehr eingesetzt werden. Mit den Simulationen können Evaluierungsanalysen, Komfortstudien und Kapazitätsprüfungen durchgeführt werden. \\
+Um Passagierströme innerhalb von Bahnhöfen \bzw Bahnsteigen simulieren zu können ist es wichtig, den Fahrgastwechsel an ihren Zügen zu modellieren. Dieser Wechsel wurde bereits untersucht und modelliert. Allerdings wurde dieser selten auf das Verhalten der Fahrgäste untersucht, oder die Untersuchungen wurden nicht in Deutschland durchgeführt. Aufgrund unterschiedlicher Ergebnisse aus den Studien in unterschiedlichen Ländern kann davon ausgegangen werden, dass diese Modelle nicht auf den öffentlichen Nahverkehr in München/Deutschland angewendet werden können. Basierend auf den Ergebnissen einer Datenerhebung an großen Bahnhöfen der Münchner U-Bahn soll in dieser Arbeit ein Modell für das Fahrgastwechselverhalten aufgestellt werden. Eine statistische Analyse der Daten soll dabei Aufschluss darüber geben, welche Verhaltensweisen gezeigt wurden, wie diese die Zeiten beeinflussen, die für den Fahrgastwechsel gebraucht werden und wann diese Verhaltensweisen auftreten. Am Häufigsten wurde hierbei beobachtet, dass Personen, die in den Zug einsteigen wollen, sich rechts und links der Tür positionieren und warten, bis alle Personen, die aussteigen wollen, den Zug verlassen haben. Aussteigende Personen verließen den Zug wie durch einen Engpass. Es wurden jedoch auch andere Verhaltensweisen beobachtet. In dieser Arbeit werden alle auffälligen Verhaltensweisen auf ihren Einfluss auf Zughaltezeiten und ihr Vorkommen untersucht. Durch dieses Vorgehen werden für das Modell relevante Verhaltensweisen identifiziert. Zudem wurde versucht eine Erklärung dafür zu finden warum dieses Verhalten auftritt. Mit den Ergebnissen wird dann ein Modell gebildet, welches den Fahrgastwechsel realistisch beschreiben soll. \todo{Am Ende überprüfen}
+
+\end{abstract}
+\begin{abstract}
+\section*{\centering Abstract} \label{Abstract}
+%Pedestrian simulations are used in different fields. They are used for buildings, event as well as for public transport. In simulations you can estimate evacuation times, crowd denseties and the efficience. To simiulate pulic transport systems you have to modell the passenger exchange. For this you have to look at the behaviour of persons waiting for an train. You can often see the left-right-standing behaviour, where waiting persons positon themselvs left and right from the train doors and wait until all people left the train and then start boarding. But it can also happen that people are somwhat in the door, start boarding before everyone left the train or in exceptional circumstances like a footballgame (soocergame) they dont even show this behaviour. The model for the passenger exchange is based on collected Data from subway stations in munich. With this data also the mean needed time for the passenger exchange and types of passengers should be modelled. %
+\todo{Übersetzung wenn Zusammenfassung steht}
+\end{abstract}
+\begin{abstract}
+\section*{Danksagung} \label{Danksagung}
+%\begin{itemize}
+%\item Köster
+%\item Geli
+%\item Leute Korrekturlesen
+%\item Familie
+\todo{Danksagung Schreiben}
+%\end{itemize}
+\end{abstract}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\pagenumbering{roman}
+
+\setcounter{page}{0}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\pagenumbering{arabic}
+\setcounter{page}{0}
+
+\bibliographystyle{natdin}
+
+\input{./content/introduction}
+\input{./content/observation}
+\input{./content/hypotheses}
+\input{./content/datacollection}
+\input{./content/dataevaluation}
+\input{./content/model}
+\input{./content/conclusion}
+\input{./content/appendix}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\pagenumbering{Roman}
+\setcounter{page}{0}
+\bibliography{resources}
+\clearpage
+
+\input{./content/statement}
+
+\newpage
+\listoftodos
+
+\end{document}
