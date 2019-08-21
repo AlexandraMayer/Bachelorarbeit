@@ -1,5 +1,5 @@
 \chapter{Datenauswertung} \label{Datenauswertung}
-Die Daten aus Tabellen werte ich nun statistisch aus. Zur Auswertung habe ich \textsf{Jupyter Notebooks} basierend auf Python 3 programmiert. \textsf{Jupyter Notebook} ist eine Open Source Webapplikation. Für das Laden der Daten und zur Auswertung von Lagemaßen wird die Python-Bibliothek \texttt{pandas} verwendet. Für die grafische Darstellung wird die Bibliothek \texttt{matplotlib.pyplot} und für die statistische Auswertung die Bibliothek \texttt{statsmodels} verwendet.
+Die Daten aus Tabellen werte ich nun statistisch aus. Zur Auswertung habe ich \textsf{Jupyter Notebooks} basierend auf Python 3 programmiert. Alle \textsf{Jupyter Notebooks} sind auf auf GitHub frei zugänglich: \url{https://github.com/AlexandraMayer/Bachelorarbeit-Fahrgastwechsel---Alexandra-Mayer-26.08.2019/tree/master/Tabellen_Notebooks}. \textsf{Jupyter Notebook} ist eine Open Source Webapplikation. Für das Laden der Daten und zur Auswertung von Lagemaßen wird die Python-Bibliothek \texttt{pandas} verwendet. Für die grafische Darstellung wird die Bibliothek \texttt{matplotlib.pyplot} und für die statistische Auswertung die Bibliothek \texttt{statsmodels} verwendet.
 
 \section{Datenvorverarbeitung}  \label{Datenvorverarbeitung}
 Bevor die Daten, in den \textsf{Jupyter Notebooks} ausgewertet werden können, müssen diese zunächst geladen werden. Mit der \texttt{pandas} Bibliothek können die Daten von CSV-Dateien in einen \texttt{Dataframe}, eine zweidimensionale Datenstruktur, geladen werden. Die in Abschnitt \ref{Tabellen} beschriebenen Tabellen lade ich in einzelne \textsf{Notebooks}. Ausnahme bilden nur die Tabellen der Gruppengrößen, die ich alle in ein \textsf{Notebook} lade. Zudem erstelle ich ein zusätzliches \textsf{Notebook}, welches die Tabelle der Fahrgastwechselzeiten lädt, jedoch nur die Beschreibung der Daten enthält. Beim Laden der Dateien wurde ging ich immer auf dieselbe Weise vor:
@@ -20,14 +20,14 @@ Die Anteile an aussteigenden, einsteigenden und Platz machenden Personen kann in
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\textwidth]{pictures/data_evaluation/data_description/process_types.png}
-	\caption{Anteil der Prozesstypen Aussteiger, Einsteiger und Platzmacher in den gesammelten Daten.}
+	\caption{Anteil der Prozesstypen Aussteiger, Einsteiger und Platzmacher in den gesammelten Daten.  Quelle: Eigene Darstellung.}
 	\label{fig:AnteileProzesstypen}
 \end{figure}
 Das Histogramm in \figurename\ref{fig:histAllePersonen} zeigt die Verteilung aller am Fahrgastwechsel teilnehmenden Personen. Hierbei geht es um die Anzahl der Einsteiger, Aussteiger und Platzmacher an jeder Tür.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/data_description/hist_persons.png}
-	\caption{Histogramm der am Fahrgastwechsel beteiligten Personen, mit Später-Ein- und Später-Aussteigern, pro Tür.}
+	\caption{Histogramm der am Fahrgastwechsel beteiligten Personen, mit Später-Ein- und Später-Aussteigern, pro Tür. Quelle: Eigene Darstellung.}
 	\label{fig:histAllePersonen}
 \end{figure}
 Im Mittel sind es also \ca 21 Personen, die an einer Tür des Zuges ein-, aussteigen oder Platz machen. Auch der Median liegt bei 21 Personen und es besteht eine Standardabweichung von ungefähr 11 Personen.
@@ -38,7 +38,7 @@ Für den ersten Überblick der Variablen bestimme ich die Lagemaße Mittelwert, 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/hist_core_persons.png}
-	\caption{Histogramm der am Fahrgastwechsel beteiligten Kern-Personen (ohne Später-Ein- und Später-Aussteiger) pro Tür.}
+	\caption{Histogramm der am Fahrgastwechsel beteiligten Kern-Personen (ohne Später-Ein- und Später-Aussteiger) pro Tür. Quelle: Eigene Darstellung.}
 	\label{fig:histPersonen}
 \end{figure}
 Die Anzahl der gefilmten am Prozess beteiligten Kern-Personen schwankt zwischen 3 und 53 Personen, wobei die Anzahl der Kern-Personen in den meisten Videos zwischen 9 und 31 Personen liegt. Durchschnittlich sind es \ca 20 (20.16) Personen, die an einer Tür ein-, aussteigen oder Platz machen. Mehr als 32 Kern-Personen kommen in den Daten nur vereinzelt vor, weshalb für eine große Anzahl von Kern-Personen nur eine sehr ungenaue Aussage getroffen werden kann (\cite{Fahrmeir.2009}). Der Median des Datensatzes liegt bei 21 Kern-Personen pro Fahrgastwechsel. Zudem ist anzumerken, dass es sich um eine unsymmetrisch linksseitige Verteilung handelt.
@@ -47,7 +47,7 @@ Nicht nur die Kern-Personen der Beobachtungen werden hier betrachtet. Die Kernwe
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/hist_core_transfer_time.png}
-	\caption{Histogramm der Kernwechselzeit, ohne Später-Ein- und Aussteiger, pro Tür.}
+	\caption{Histogramm der Kernwechselzeit, ohne Später-Ein- und Aussteiger, pro Tür. Quelle: Eigene Darstellung.}
 	\label{fig:histTimes}
 \end{figure}
 Der Wert der benötigten Sekunden liegt zwischen 3.4 und 35.0 Sekunden. Die Verteilung ist hierbei symmetrischer als die der Kern-Personen, kann jedoch auch als eher linksseitig beschrieben werden.
@@ -59,7 +59,7 @@ Nun wird zuletzt die Verteilung der Fahrgastwechselzeit betrachtet. Auch hierfü
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/hist_transfer_times.png}
-	\caption{Histogramm der Fahrgastwechselzeiten pro Tür.}
+	\caption{Histogramm der Fahrgastwechselzeiten pro Tür. Quelle: Eigene Darstellung.}
 	\label{fig:histAllTimes}
 \end{figure}
 Die Werte für die Fahrgastwechselzeiten liegen zwischen 3.4 und 41.2 Sekunden. Für mehr als 32 Sekunden sind hierbei ebenfalls wenig Daten gegeben, was auch hier zu Ungenauigkeiten in der Auswertung führen könnte. Die Verteilung ist ebenfalls leicht linksseitig.
@@ -69,14 +69,14 @@ Zunächst betrachte ich die Kernwechselzeit in Abhängigkeit der Kern-Personenza
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/core_coherence_analysis.png}
-	\caption{Streudiagramm zwischen Anzahl der Kern-Personen (ohne Später-Ein- und Später-Aussteiger), und der Kernwechselzeit in Sekunden. Annähernd linearer und monoton steigender Zusammenhang.}
+	\caption{Streudiagramm zwischen Anzahl der Kern-Personen (ohne Später-Ein- und Später-Aussteiger), und der Kernwechselzeit in Sekunden. Annähernd linearer und monoton steigender Zusammenhang. Quelle: Eigene Darstellung.}
 	\label{fig:zusammenhangsAnalyse}
 \end{figure}
 Nun stelle ich ebenfalls das Streudiagramm der Fahrgastwechselzeit in Abhängigkeit der Anzahl der Personen dar.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/coherence_analysis.png}
-	\caption{Streudiagramm zwischen Anzahl der Personen, die am Fahrgastwechsel beteiligt sind inklusive Später-Ein- und Später-Aussteiger, und der Fahrgastwechselzeit in Sekunden. Annähernd linearer und monoton steigender Zusammenhang.}
+	\caption{Streudiagramm zwischen Anzahl der Personen, die am Fahrgastwechsel beteiligt sind inklusive Später-Ein- und Später-Aussteiger, und der Fahrgastwechselzeit in Sekunden. Annähernd linearer und monoton steigender Zusammenhang. Quelle: Eigene Darstellung.}
 	\label{fig:zusammenhangsAnalyseAlle}
 \end{figure}
 Auch in diesem Streudiagramm in \figurename \ref{fig:zusammenhangsAnalyseAlle} ist ein annähernd linearer monoton steigender Zusammenhang zu erkennen. Die Streubreite für große Anzahl der Personen ist hier noch höher als bei der Kernwechselzeit ohne Später-Ein- und Später-Aussteiger. 
@@ -104,7 +104,7 @@ Die von \texttt{Python} zurückgebenden Schätzwerte sind: $\hat{\beta_0}=3.55$ 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/lin_core_transfer_time.png}
-	\caption{Streudiagramm und lineare Regression der Anzahl der Kern-Personen ($x$) und Kernwechselzeit in Sekunden ($y$) und der geschätzten Funktion: $y = 3.55 + 0.66 \cdot x$, mit dem 95\% Konfidenzintervall.}
+	\caption{Streudiagramm und lineare Regression der Anzahl der Kern-Personen ($x$) und Kernwechselzeit in Sekunden ($y$) und der geschätzten Funktion: $y = 3.55 + 0.66 \cdot x$, mit dem 95\% Konfidenzintervall. Quelle: Eigene Darstellung.}
 	\label{fig:LinReg}
 \end{figure}
 Nach der Anwendung der linearen Einfachregression überprüfe ich nun, wie gut die Schätzfunktion für die Daten geeignet ist. Dabei ziehe ich das Bestimmtheitsmaß, welches mit $R^2$ bezeichnet wird, heran. Das Bestimmtheitsmaß misst die Güte der Anpassung an die Daten. Auch die Erklärung des Bestimmtheitsmaßes kann im Anhang in \ref{append:rsquared} nachgelesen werden. \\
@@ -150,7 +150,7 @@ durch. Die Variable $Fahrgastwechselzeit$ stellt hierbei die Fahrgastwechselzeit
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/transferTime/lin_transfer_time.png}
-	\caption{Lineare Regression zwischen Anzahl der Personen die am Fahrgastwechsel beteiligt sind ($x$) und der Fahrgastwechselzeit in Sekunden ($y$) und der geschätzten Funktion, $y= 3.67 + 0.69 \cdot x$, sowie dem 95\% Konfidenzintervall.}
+	\caption{Lineare Regression zwischen Anzahl der Personen die am Fahrgastwechsel beteiligt sind ($x$) und der Fahrgastwechselzeit in Sekunden ($y$) und der geschätzten Funktion, $y= 3.67 + 0.69 \cdot x$, sowie dem 95\% Konfidenzintervall. Quelle: Eigene Darstellung.}
 	\label{fig:LinRegAlle}
 \end{figure}
 Die von \texttt{Python} zurückgebenden Schätzwerte sind hier: $\hat{\beta_0}=3.67$ und $\hat{\beta_1}=0.69$. Das Streudiagramm mit der Schätzfunktion und dem Konfidenzintervall der Funktion kann in \figurename \ref{fig:LinRegAlle} betrachtet werden.
@@ -175,7 +175,7 @@ In der Software von accu:rate werden in einer Tabelle, die in einer Simulation v
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/groups/groups.png}
-	\caption{Kreisdiagramm der Anteile der Personen, die in einer Gruppe mit einer gewissen Gruppengröße beobachtet wurden.}
+	\caption{Kreisdiagramm der Anteile der Personen, die in einer Gruppe mit einer gewissen Gruppengröße beobachtet wurden. Quelle: Eigene Darstellung.}
 	\label{fig:AnteileGruppen}
 \end{figure}
 Gruppen erkenne ich durch Verhaltensweisen, wie das Sprechen mit oder warten auf andere Mitglieder der Gruppe. Bei den prozentualen Anteilen unterscheide ich nicht zwischen den Prozesstypen Einsteigern, Aussteigern und Platzmachern, da der Prozesstyp keine Auswirkung darauf hat, welcher Gruppengröße eine Person angehört. Da in den Tabellen nur die Anzahl der Gruppe mit einer gewissen Größe in einem Video angegeben ist und nicht die Anzahl der Personen in dieser Gruppe, wurde für die Auswertung die Gruppenstärke mit der Anzahl der vorkommenden Gruppen multipliziert. 
@@ -190,7 +190,7 @@ Nach den Gruppengrößen und Wechselzeiten untersuche ich nun auch die Verhalten
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/counts_behavoirs.png}
-	\caption{Balkendiagramm der prozentualen Anteile von Verhaltensweisen und Merkmalen. Der prozentuale Anteil bezieht sich hierbei auf den Anteil der gefilmten Türen, an denen das entsprechende Verhalten oder Merkmal beobachtet wurde.}
+	\caption{Balkendiagramm der prozentualen Anteile von Verhaltensweisen und Merkmalen. Der prozentuale Anteil bezieht sich hierbei auf den Anteil der gefilmten Türen, an denen das entsprechende Verhalten oder Merkmal beobachtet wurde. Quelle: Eigene Darstellung.}
 	\label{fig:BalkenVerhalten}
 \end{figure}
 Zu erkennen ist, dass alle Verhaltensweisen und Merkmale in weniger als 50 \% der Videos gezeigt wurden. Abgesehen vom Verhalten "`Platz machen"' liegen diese jedoch alle knapp unter oder über 40 \%. Ein Verhalten, welches an \ca 40 \% der Türen gezeigt wird, ist meinem Empfinden nach relevant und sollte, falls es ebenfalls einen Einfluss auf die Fahrgastwechselzeit besitzt, modelliert werden. Um eine Entscheidung, darüber zu treffen ob die Verhaltensweisen "`früher Einsteigen"' und "`im Weg Stehen"', sowie die Merkmale "`sperrig"', "`langsam"' und "`abgelenkt"' für das Modell relevant sind, wird ihr Einfluss auf die Zeit untersucht. Zunächst soll jedoch noch auf die Verhaltensweise "`Platz machen"' eingegangen werden. Platzmacher treten nur an 16.07 \% der Türen auf und liegen damit deutlich unter 40 \%. Wie jedoch schon erwähnt stellen sie einen wichtigen Teil des Fahrgastwechsels dar, da sie sowohl ein- als auch aussteigen müssen, um Platz zu machen. Dass diese Verhaltensweise nur selten auftritt, ist zudem damit zu erklären, dass Platzmacher erst notwendig werden, wenn viele Personen im Wagon sind \bzw am Fahrgastwechsel beteiligt sind. Sind nur wenige Personen im Wagon und somit nur wenig Aussteiger vorhanden, können Fahrgäste ungehindert aussteigen und Platzmacher werden nicht benötigt. Ob es einen Zusammenhang zwischen der Anzahl der Aussteiger und dem Auftreten von Platzmachern gibt, untersuche ich nach der Untersuchung des zeitlichen Einflusses der andere Verhaltensweisen und Merkmale.
@@ -205,7 +205,7 @@ Zunächst untersuche ich den Einfluss von Personen, welche das Merkmal "`langsam
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/comp_Langsam.png}
-	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Personen die langsam sind und für Personen ohne das Merkmal "`langsam"'.}
+	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Personen die langsam sind und für Personen ohne das Merkmal "`langsam"'. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotLangsam}
 \end{figure}
 Wie auf \figurename \ref{fig:BoxPlotLangsam} zu sehen ist hat sich die Fahrgastwechselzeit pro Personen durch langsame Personen im Fahrgastwechsel erhöht. Zu erkennen ist dies durch die Rechtsverschiebung des Box-Plots und dem erhöhten Mittelwert. Ob diese Erhöhung der Zeit signifikant ist, und das Merkmal damit in das Modell aufgenommen werden soll, wird durch den Vergleich von Quantilen entschieden. Zu diesem Zweck verglich ich den Median der Zeit pro Person, mit diesem Merkmal, mit dem oberen Quartil der Zeit pro Person, ohne das Merkmal. Dadurch wird gewährleistet, dass (weniger als) 25\% der Fahrgastwechselzeiten pro Person langsamer waren als das 50\% Quantil der Fahrgäste mit diesem Merkmal. Ist dies gegeben gehe ich davon aus, dass die Auswirkung des Merkmales auf die Zeit signifikant ist und dieses modelliert werden sollte.\\
@@ -215,7 +215,7 @@ Als nächstes untersuche ich die Auswirkung des Merkmals "`sperrig"'. Hierbei be
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/comp_Sperrig.png}
-	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel in denen Personen sperrig sind mit Fahrgastwechsel ohne diese Personen.}
+	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel in denen Personen sperrig sind mit Fahrgastwechsel ohne diese Personen. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotSperrig}
 \end{figure}
 Bei diesem Merkmal liegt das obere Quartil der Zeit pro Person, für Personen ohne das Merkmal, bei 0.841 Sekunden, während der Median der Daten mit sperrigen Personen bei 0.844 Sekunden liegt. Da der Median für Personen mit dem Merkmal über dem oberen Quartil der Zeiten ohne dieses liegt, kann gesagt werden, dass der Unterschied signifikant ist. Zudem vermutete ich vor dem genaueren Betrachten, dass das Merkmal "`sperrig"' den Fahrgastwechsel verlangsamen könnte. Durch sperrige Personen kann es passieren, dass nicht mehr, wie im Normalfall, zwei Personen gleichzeitig durch die Tür gehen können, sondern nacheinander Aussteigen müssen, was zu einer Verlangsamung des Prozesses führen könnte. Da der zeitliche Einfluss des Merkmals erklärt werden kann und die Bedingung für die Quantile der Daten erfüllt ist, wird angenommen, dass das Merkmal "`sperrig"' signifikant ist und in das Modell aufgenommen werden sollte.
@@ -224,7 +224,7 @@ Als letztes Merkmal untersuche ich nun noch das Merkmal "`abgelenkt"'. Beim Verg
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/comp_Abgelenkt.png}
-	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel in denen Personen vorkommen, die durch Gegenstände in ihrer Hand abgelenkt sind mit Fahrgastwechseln ohne abgelenkte Personen.}
+	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel in denen Personen vorkommen, die durch Gegenstände in ihrer Hand abgelenkt sind mit Fahrgastwechseln ohne abgelenkte Personen. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotAbgelenkt}
 \end{figure}
 Die Signifikanz des Unterschieds ist somit deutlich geringer als vermutet. Dies ist wohl damit zu erklären, dass Personen, die durch Gegenstände in ihrer Hand vom Wechsel abgelenkt sind, sich nicht permanent mit diesem Gegenstand (\zB Handy oder Zeitung) beschäftigen. Sie sehen immer wieder auf, um zu wissen in welche Richtung sie gehen und Kollisionen sowie ein langsames Gehen zu vermeiden .
@@ -236,14 +236,14 @@ Bei der Verhaltensweise "`früher Einsteigen"' vermute ich, dass dieses Verhalte
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/comp_Fruehereinsteigen.png}
-	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel bei denen Personen vor Beendigung des Ausstiegsprozess Einsteigen mit, der Zeit pro Person für Fahrgastwechsel ohne Früher-Einsteiger.}
+	\caption{Box-Plot für den Vergleich der Zeiten pro Person für Fahrgastwechsel bei denen Personen vor Beendigung des Ausstiegsprozess Einsteigen mit, der Zeit pro Person für Fahrgastwechsel ohne Früher-Einsteiger. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotFrueherEinsteigen}
 \end{figure}
 Bei der Verhaltensweise "`im Weg Stehen"' zeigt sich wie erwartet, auch eine Veränderung nach rechts, wenn die Fahrgastwechselzeiten für 19 bis 27 Personen verglichen werden. Diese Veränderung kann auf \figurename \ref{fig:BoxPlotImWeg} betrachtet werden.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/comp_ImWeg.png}
-	\caption{Boxplot für den Vergleich der Zeiten pro Person für Personen die im Weg stehen und für andere Personen.}
+	\caption{Boxplot für den Vergleich der Zeiten pro Person für Personen die im Weg stehen und für andere Personen. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotImWeg}
 \end{figure}
 Der Mittelwert für Fahrgastwechselzeiten pro Person mit im Weg stehenden Personen liegt mit 0.876 Sekunden über dem Wert der Zeit pro Person ohne dieses Verhalten der bei 0.806 Sekunden liegt. Zudem liegt auch das obere Quartil der Zeit mit 0.836 Sekunden pro Person unter dem Median der Fahrgastwechselzeit pro Person mit Videos bei denen Personen die "`im Weg Stehen"'. Dieser Median beträgt 0.841 Sekunden. Somit ist davon auszugehen, dass diese Verhaltensweise signifikant ist und wird deshalb in das Modell mit aufgenommen. Zudem könnte nach der Simulation gemessen werden, ob sich die Zeit der Fahrgastwechsel erhöht, wenn in einer Simulation Personen vorkamen, die im Weg standen. Der Einfluss könnte also zur Validierung des Modelles beitragen.
@@ -277,7 +277,7 @@ den Datenpunkten und dem Konfidenzintervall kann in \figurename \ref{fig:LogRegP
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/data_evaluation/behavior/log_reg_spacemaker.png}
-	\caption{Schätzfunktion der logistischen Regression mit der Zielvariable Platzmacher ($y$) und Kovariable Anzahl Aussteiger ($x$) mit Datenpunkten und Konfidenzintervall. Schätzfunktion: $P(y=1) = \frac{e^{-2.96+0.9 \cdot y}}{1 + e^{-2.96 + 0.9 \cdot y}}$}
+	\caption{Schätzfunktion der logistischen Regression mit der Zielvariable Platzmacher ($y$) und Kovariable Anzahl Aussteiger ($x$) mit Datenpunkten und Konfidenzintervall. Schätzfunktion: $P(y=1) = \frac{e^{-2.96+0.9 \cdot y}}{1 + e^{-2.96 + 0.9 \cdot y}}$. Quelle: Eigene Darstellung.}
 	\label{fig:LogRegPM}
 \end{figure}
 Wie auf dem Bild zu erkennen, sind die Konfidenzintervalle sehr groß und auch der $p$-Wert der t-Statistik für $\beta_1$ liegt mit $0.05$ über dem Signifikanzniveau von $0.01$. Mit meinen Daten kann also nicht modelliert werden, wann Platzmacher auftreten. Die Forschungsfrage \ref{item:Platzmacher} "`Gibt einen Zusammenhang zwischen der Anzahl der Aussteiger und dem Vorkommen von Platzmachern?"' kann folgendermaßen beantwortet werden:
@@ -295,7 +295,7 @@ Zunächst betrachte ich Anteile der Typen für Einsteiger.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\textwidth]{pictures/data_evaluation/types/proportions_Einsteiger.png}
-	\caption{Kreisdiagramm der Anteile der Typen aggressiv, defensiv und normal für den Prozesstypen Einsteiger (siehe \ref{Tabelle der Typen}).}
+	\caption{Kreisdiagramm der Anteile der Typen aggressiv, defensiv und normal für den Prozesstypen Einsteiger (siehe \ref{Tabelle der Typen}). Quelle: Eigene Darstellung.}
 	\label{fig:AnteileTypenEinsteiger}
 \end{figure}
 Wie in \figurename \ref{fig:AnteileTypenEinsteiger} zu sehen ist, beobachtete ich am meisten normale Einsteiger, was an dem Anteil von \ca 68 \% zu erkennen ist. Mit einem Anteil von 20\% für aggressive und \ca 12\% für defensive Typen scheinen diese Typen jedoch auch signifikant zu sein. Es ist also davon auszugehen, dass ihre Modellierung zu einem besseren Modell führen würde. Die Forschungsfrage \ref{item:Typen,Typen} kann also zumindest für Einsteigende so beantwortet werden, dass ihr Anteil signifikant ist. 
@@ -304,7 +304,7 @@ In \figurename \ref{fig:AnteileTypenAussteiger} können die Anteile der Typen f�
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\textwidth]{pictures/data_evaluation/types/proportions_Aussteiger.png}
-	\caption{Kreisdiagramm der Typen aggressiv, defensiv und normal für den Prozesstypen Aussteiger (siehe \ref{Tabelle der Typen}).}
+	\caption{Kreisdiagramm der Typen aggressiv, defensiv und normal für den Prozesstypen Aussteiger (siehe \ref{Tabelle der Typen}). Quelle: Eigene Darstellung.}
 	\label{fig:AnteileTypenAussteiger}
 \end{figure}
 In dem Kreisdiagramm ist zu erkennen, dass der größte Anteil an beobachteten Typen wieder der normale Typ ist. Diese Typen besitzen einen Anteil von \ca 72 \%. Jedoch gibt es auch einen signifikanten Anteil an defensiven und aggressiven Typen, wobei defensive einen Anteil von 13 \% und aggressive einen Anteil von \ca 15 \% ausmachen. Für Aussteiger ist die Frage \ref{item:Typen,Typen} also auch mit ja zu beantworten. Da es hier signifikante Anteile für die Typen defensiv und aggressiv gibt, wäre es gut auch die Aussteiger im Modell in aggressive, defensive und normale Typen zu unterteilen.
@@ -313,7 +313,7 @@ Als nächstes werte ich nun noch die Anteile der Platzmacher aus.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/data_evaluation/types/proportions_Platzmacher.png}
-	\caption{Kreisdiagramm der Typen aggressiv, defensiv und normal für den Prozesstypen Platzmacher (siehe \ref{Tabelle der Typen}).}
+	\caption{Kreisdiagramm der Typen aggressiv, defensiv und normal für den Prozesstypen Platzmacher (siehe \ref{Tabelle der Typen}). Quelle: Eigene Darstellung.}
 	\label{fig:AnteileTypenPlatzmacher}
 \end{figure}
 In \figurename \ref{fig:AnteileTypenPlatzmacher} ist nun zuletzt das Kreisdiagramm der Anteile von Typen der Platzmacher zu sehen. Bei den Platzmachern überwiegen, im Gegensatz zu den anderen Prozesstypen, die aggressiven Typen mit über 50\% (58.33\%). Der Anteil der normalen Typen macht mit \ca 33\%  auch einen großen Anteil aus. Es gibt jedoch auch einen Anteil an defensiven Platzmacher. Mit 8.33\% scheinen diese jedoch nicht signifikant zu sein. Da der defensive Typ für Aussteiger und Einsteiger jedoch in das Modell mit aufgenommen werden soll, soll dieser auch für Platzmacher definiert werden, um das Modell konsistent zu halten. Es ist jedoch auch anzumerken, dass der Anteil von 8.33\% wahrscheinlich nur durch die geringe Anzahl an aufgenommenen Platzmachern zustande gekommen ist. Im Material wurde nur ein einziger defensiver Platzmacher gesehen, da ich jedoch nur sehr wenige Platzmacher beobachtet habe, ist nicht festzustellen, ob der Anteil sich verringern würde, wenn mehr Platzmacher beobachtet werden. Da die Platzmacher sowohl ein- als auch aussteigen, wird die Forschungsfrage auch für diesen Prozesstypen mit Ja beantwortet. 
@@ -330,7 +330,7 @@ Mit den Daten aus der Tabelle erstellte ich Box-Plots für die Startzeiten der T
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=1.0\textwidth]{pictures/data_evaluation/types/starting_time/starting_times.png}
-	\caption{Box-Plots der Startzeiten für die unterschiedlichen Typen aggressiv, defensiv und normal von Aussteigern.}
+	\caption{Box-Plots der Startzeiten für die unterschiedlichen Typen aggressiv, defensiv und normal von Aussteigern. Quelle: Eigene Darstellung.}
 	\label{fig:BoxPlotStartingTime}
 \end{figure}
 Auf diesem Plot ist zu erkennen, dass sich die Startzeiten der Aussteiger für die unterschiedlichen Typen defensiv, aggressiv und normale unterscheidet, wie ich bei der Beobachtung vermutet habe. Während die defensiven mit 2.0 Sekunden im Mittel am längsten warten, ergeben die Mittelwerte für normale und aggressive Typen das diese im Mittel 1.7 \bzw 1.4 Sekunden warten, bevor sie mit dem Aussteigen anfangen. Für die Startzeit soll jedoch kein fester Wert verwendet werden, sondern jeweils ein Zeitraum für defensive, aggressive und normale gewählt werden. Hierfür untersuchte ich die Histogramme der Startzeiten für die Typen. Da jedoch nur sehr wenige Daten vorhanden sind, konnten diese nicht auf ihre Verteilung untersucht werden. Deshalb entschied ich, dass der Zeitraum durch die Quartile festgelegt wird. Für die untere Schranke des Startzeitraums wählte ich jeweils das 25\%-Quantil, für die obere das 75\%-Quantil, der Startzeiten für den entsprechenden Typ. \\ 

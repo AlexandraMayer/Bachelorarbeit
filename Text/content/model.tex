@@ -14,7 +14,7 @@ Die Skizze mit eingezeichnetem Ziel-Bereich für Aussteiger kann in \figurename 
 \begin{figure}[H]
 	\centering
 		\includegraphics[angle=270, width=0.5\textwidth]{pictures/model/kognitive_heuristic_model/alight_sketch.png}
-	\caption{Skizze zur Darstellung der Zielbereiche von Aussteigern aus der Vogelperspektive: U-Bahn "`Wände"' dargestellt durch graue Linien, Sitzplätze der U-Bahn durch graue Vierecke, Bahnsteigkante durch schwarze Linie, Aussteiger durch rote Kreise und Einsteiger durch blaue Kreise. Der Zielbereich ist mit einem roten Rechteck gekennzeichnet.}
+	\caption{Skizze zur Darstellung der Zielbereiche von Aussteigern aus der Vogelperspektive: U-Bahn "`Wände"' dargestellt durch graue Linien, Sitzplätze der U-Bahn durch graue Vierecke, Bahnsteigkante durch schwarze Linie, Aussteiger durch rote Kreise und Einsteiger durch blaue Kreise. Der Zielbereich ist mit einem roten Rechteck gekennzeichnet. Quelle: Eigene Darstellung.}
 	\label{fig:SkizzeAussteiger}
 \end{figure}
 Einsteiger und Platzmacher besitzen als Zwischenziel den Wartebereich. Einsteiger beginnen den Fahrgastwechsel am Bahnsteig in einigem Abstand vom Gleis. Von diesem Startpunkt bewegen sie sich zum Zwischenziel, einen Wartebereich rechts oder links der Türen. Ihr endgültiges Ziel liegt im Wagon kurz hinter den Türen.
@@ -22,7 +22,7 @@ Die Skizze für die Bereiche der Einsteiger kann in \figurename \ref{fig:SkizzeE
 \begin{figure}[H]
 	\centering
 		\includegraphics[angle=270, width=0.5\textwidth]{pictures/model/kognitive_heuristic_model/boarding_sketch.png}
-	\caption{Skizze zur Darstellung der Zwischenzielbereiche und Zielbereiche von Einsteigen aus der Vogelperspektive: Die Zwischenzielbereiche sind in hellblau und lila, der Zielbereich in dunkelblau eingezeichnet.}
+	\caption{Skizze zur Darstellung der Zwischenzielbereiche und Zielbereiche von Einsteigern aus der Vogelperspektive: Die Zwischenzielbereiche sind in hellblau und lila, der Zielbereich in dunkelblau eingezeichnet. Quelle: Eigene Darstellung.}
 	\label{fig:SkizzeEinsteiger}
 \end{figure} 
 Der Zwischenzielbereich der Einsteiger, ist in dieser Abbildung, \figurename \ref{fig:SkizzeEinsteiger} in hellblau eingezeichnet. Zu diesem Zwischenziel kann auch der in lila dargestellte Bereich, der "`Im Weg"'-Bereich werden, wenn eine Person aufgrund der Heuristik im Weg steht. Der Zielbereich der Einsteiger ist in dunkelblau dargestellt.
@@ -31,7 +31,7 @@ Platzmacher starten im Wagon und gehen zunächst auch in die Wartebereiche neben
 \begin{figure}[H]
 	\centering
 		\includegraphics[angle=270, width=0.5\textwidth]{pictures/model/kognitive_heuristic_model/spacemaker_sketch.png}
-	\caption{Skizze zur Darstellung der Zwischenzielbereiche und Zielbereiche von Platzmachern aus der Vogelperspektive: Platzmacher werden durch grüne Kreise dargestellt. Zwischenzielbereiche sind in hellgrün und lila, der Zielbereich in dunkelgrün eingezeichnet.}
+	\caption{Skizze zur Darstellung der Zwischenzielbereiche und Zielbereiche von Platzmachern aus der Vogelperspektive: Platzmacher werden durch grüne Kreise dargestellt. Zwischenzielbereiche sind in hellgrün und lila, der Zielbereich in dunkelgrün eingezeichnet. Quelle: Eigene Darstellung.}
 	\label{fig:SkizzePlatzmacher}
 \end{figure}
 Der Zwischenzielbereich der Platzmacher, ist in hellgrün eingezeichnet. Zu diesem Zwischenziel kann auch, der in lila dargestellte Bereich, der "`Im Weg"'-Bereich werden, wenn eine Person aufgrund der Heuristik im Weg steht. Der Zielbereich der Platzmacher ist in dunkelgrün dargestellt.
@@ -64,7 +64,7 @@ Das Prozessdiagramm für die Heuristik des Einsteigeprozess, ist in \figurename 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.9\textwidth]{pictures/model/algorithm/boarding/boarding_process.png}
-	\caption{Prozessdiagramm der Einsteiger: "`Einsteigeprozess"'-Heuristik.}
+	\caption{Prozessdiagramm der Einsteiger: "`Einsteigeprozess"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:EH}
 \end{figure}
 Will eine Person an einer Tür einsteigen, so wird zunächst überprüft ob an dieser Tür Aussteiger vorhanden sind. Ist dies nicht der Fall, so können die Einsteiger durch Verwendung der "`Follower"'-Heuristik, bei aggressiven Einsteigern durch der "`aggressive Follower"'-Heuristik, sofort mit dem Einsteigen in den Zug beginnen. Gibt es jedoch Personen, die durch diese Tür auf den Bahnsteig gelangen wollen, so wird für die unterschiedlichen Typen die jeweilige "`Einsteiger"'-Heuristik verwendet. Der Algorithmus des Einsteigeprozesses, könnte im Code wie folgt umgesetzt werden:
@@ -104,7 +104,7 @@ Gibt es keine Aussteiger, so muss die "`Einsteige"'-Heuristik für den entsprech
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=1.0\textwidth]{pictures/model/algorithm/heuristics/follower_heuristic.png}
-	\caption{Prozessdiagramm der "`Follower"'-Heuristik nach \cite{Seitz.2016}.}
+	\caption{Prozessdiagramm der "`Follower"'-Heuristik nach \cite{Seitz.2016}. Quelle: Eigene Darstellung.}
 	\label{fig:followerHeuristik}
 \end{figure}
 Wird bei der "`Follower"'-Heuristik eine Kollision auf dem Weg zum Ziel erkannt, so versucht der Agent die nächste Person zu finden, die in dieselbe Richtung geht. Ist ein solcher Leader gefunden, geht der Agent seinen nächsten Schritt in Richtung dieses Leaders. Wenn kein Leader gefunden wird oder der Schritt in Richtung Leader zu einer Kollision führen würde, so wird die "`Sideways evasion"'-Heuristik verwendet (\cite{Seitz.2016}). Der Pseudocode der "`Follower"'-Heuristik mit angepasster Abfrage für defensive kann in Algorithmus \ref{alg:Follower} betrachtet werden.
@@ -168,7 +168,7 @@ Neben dem \textbf{StepPossible} Algorithmus wird in der "`Follower"'-Heuristik a
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.9\textwidth]{pictures/model/algorithm/heuristics/sideways_evasion_heuristic.png}
-	\caption{Prozessdiagramm der "`Sideways Evasion"'-Heuristik nach \cite{Seitz.2016}.}
+	\caption{Prozessdiagramm der "`Sideways Evasion"'-Heuristik nach \cite{Seitz.2016}. Quelle: Eigene Darstellung.}
 	\label{fig:sidewayHeuristik}
 \end{figure} 
 Bei der "`Sideways evasion"'-Heuristik versuchen die Agenten zunächst die "`Tangential evasion"'-Heuristik zu verwenden, um zum Ziel zu gelangen. Dabei ist zu beachtet, dass die "`Step or wait"'-Heuristik die in  der "`Tangential evasion"'-Heuristik verwendet wird hier nicht angewandt wird. Gelingt das tangentiale Ausweichen nicht, wird versucht seitlich auszuweichen. Die "`Step or wait"'-Heuristik wird von den Agenten erst dann eingesetzt, wenn weder tangentiales noch seitliches Ausweichen möglich ist (\cite{Seitz.2016}). Der Algorithmus für die "`Sideways evasion"'-Heuristik mit meiner Anpassung für defensive Typen ist in Algorithmus \ref{alg:SidewaysEvasion} dargestellt.
@@ -208,7 +208,7 @@ Die "`Tangential evasion"'-Heuristik kann in \ref{fig:tangentialHeuristik} betra
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.9\textwidth]{pictures/model/algorithm/heuristics/tangential_evasion_heuristic.png}
-	\caption{Prozessdiagramm der "`Tangential evasion"'-Heuristik nach \cite{Seitz.2016}.}
+	\caption{Prozessdiagramm der "`Tangential evasion"'-Heuristik nach \cite{Seitz.2016}. Quelle: Eigene Darstellung.}
 	\label{fig:tangentialHeuristik}
 \end{figure} 
 Die "`Tangential evasion"'-Heuristik lässt Agenten versuchen Kollisionen tangential auszuweichen. Wenn das tangentiale Ausweichen nicht möglich ist, so wird die "`Step or wait"'-Heuristik verwendet, was bedeutet, dass der Agent in seiner aktuellen Position verbleibt (\cite{Seitz.2016}). Der zugehörige Algorithmus, wird in Algorithmus \ref{alg:TangentialEvasion}, dargestellt.
@@ -249,7 +249,7 @@ Neben den vorgestellten Heuristiken mit der Anpassung für defensive Agenten, de
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=1.0\textwidth]{pictures/model/algorithm/heuristics/aggressive_follower_heuristic.png}
-	\caption{Prozessdiagramm der "`aggressiven Follower"'-Heuristik.}
+	\caption{Prozessdiagramm der "`aggressiven Follower"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:AFH}
 \end{figure}
 Bei der "`aggressiven Follower"'-Heuristik versucht der Agent seitlich und tangential auszuweichen, wenn der Weg zum Ziel versperrt ist. Sind auch die Ausweichmöglichkeiten versperrt, so wird versucht der nächsten Person in die gleiche Richtung zu folgen. Wenn jedoch kein Leader gefunden werden kann, oder ein Schritt in die Richtung von diesem zu einer Kollision führen würde, bleibt die Person stehen, sie verwendet die "`Step or wait"'-Heuristik. Der Algorithmus der "`aggressiven Follower"'-Heuristik ist in Algorithmus \ref{alg:aggressiveFollower} eingefügt.
@@ -290,7 +290,7 @@ Für normale Einsteiger wird die "`normaler Einsteiger"'-Heuristik verwendet, we
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/model/algorithm/boarding/normal_boarding/normal_boarding_heuristic.png}
-	\caption{Prozessdiagramm "`normaler Einsteiger"'-Heuristik.}
+	\caption{Prozessdiagramm "`normaler Einsteiger"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:NEH}
 \end{figure}
 Zunächst wird bei der "`normalen Einsteiger"'-Heuristik berechnet wie viel Platz im Türbereich ist. Ist genügend Platz in der Tür, beschrieben in \ref{Tabelle der Typen}, so beginnt der normale Einsteiger mit dem Einsteigen, was durch die "`Follower"'-Heuristik geschieht. Ist nicht genügend Platz wird überprüft, ob sich der Einsteiger bereits in einem Wartebereich befindet. Ist ein Agent bereits in einem Wartebereich, so verbleibt er in seiner aktuellen Position, er wartet, bis er einsteigen kann. Ist der Agent noch nicht im Wartebereich, so wird die "`normale Platzsuche"'-Heuristik verwendet, die im Anschluss erklärt wird. Zunächst wird jedoch der Algorithmus \ref{alg:NormalBoarding} \textbf{NormalBoardingHeuristic} erklärt. 
@@ -325,7 +325,7 @@ Die eben erwähnte "`Platzsuche"'-Heuristik für normale Agenten ist in \figuren
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=1.0\textwidth]{pictures/model/algorithm/boarding/normal_boarding/normal_space_find_heuristic.png}
-	\caption{Prozessdiagramm "`normale Platzsuche"'-Heuristik.}
+	\caption{Prozessdiagramm "`normale Platzsuche"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:NPH}
 \end{figure}
 Will ein normaler Einsteiger sich an einen Platz im Wartebereich stellen, so wird zunächst überprüft, ob in diesem schon andere Agenten stehen. Steht dort keine Person, so wird das Zwischenziel des Agenten auf den vorderen Bereich der Wartezone gesetzt. Ich nehme an, dass jemand nah an der Tür ist, wenn er nicht weiter von ihr entfernt ist als seine doppelte Schulterbreite. Sind schon Agent im Wartebereich sucht der Agent nach dem nächsten freien Platz in der Nähe der Tür. Kann ein solcher Platz nicht gefunden werden, so wird das Zwischenziel des normalen Einsteigers zur Position hinter der letzten Person. Wurde ein freier Platz gefunden, ist dieser das Zwischenziel des Agenten. Nachdem das Zwischenziel festgelegt wurde bewegt sich der Agent mit Hilfe der "`Follower"'-Heuristik in die Richtung von diesem.
@@ -358,7 +358,7 @@ Das Prozessdiagramm der defensiver "`Einsteiger"'-Heuristik wird in \ref{fig:DEH
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.9\textwidth]{pictures/model/algorithm/boarding/defensive_boarding/defensive_boarding_heuristic.png}
-	\caption{Prozessdiagramm "`defensiver Einsteiger"'-Heuristik.}
+	\caption{Prozessdiagramm "`defensiver Einsteiger"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:DEH}
 \end{figure}
 Wie in \figurename \ref{fig:DEH} zu sehen ist, überprüft ein defensiver Einsteiger zunächst, ob der letzte Aussteiger schon ausgestiegen ist.  Ist der letzte Aussteiger aus der Tür, beginnt der defensive Einsteiger mit der "`Follower"'-Heuristik mit dem Einsteigen. Sind noch Aussteiger im Zug, überprüft der Agent seine aktuelle Position. Liegt diese im Wartebereich, verweilte er in seiner aktuellen Position. Ist der Einsteiger noch nicht im Wartebereich, sucht er mit Hilfe der "`defensiven Platzsuche"'-Heuristik einen Platz in diesem. Diese Heuristik kann in \figurename \ref{fig:DPH} betrachtet werden. Im Gegensatz zu normalen Einsteigern, wartet der defensive Einsteiger solange im Wartebereich, bis der letzte Aussteiger den Wagon verlässt, auch wenn genügend Platz ist. 
@@ -389,7 +389,7 @@ Bei defensiven Typen wird das Ziel erst auf das Innere des Zuges gesetzt, wenn a
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/model/algorithm/boarding/defensive_boarding/defensive_space_find_heuristic.png}
-	\caption{Prozessdiagramm "`defensive Platzsuche"'-Heuristik.}
+	\caption{Prozessdiagramm "`defensive Platzsuche"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:DPH}
 \end{figure}
 In der "`defensiven Platzsuche"'-Heuristik, wählt der Agent als Zwischenziel ebenfalls einen Platz nahe an der Tür, wenn keine andere Person im Wartebereich steht. Ist schon eine Person im Wartebereich, so wählt der defensive Einsteiger immer die Position hinter der letzten wartenden Person im Bereich als sein Zwischenziel. Mit Hilfe der "`Follower"'-Heuristik, bewegt sich der Agent daraufhin zu seinem Zwischenziel. \\
@@ -416,7 +416,7 @@ Die Heuristik der aggressiven Einsteiger in \figurename \ref{fig:AEH} wird in \r
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/model/algorithm/boarding/aggressive_boarding/aggressive_boarding_heuristic.png}
-	\caption{Prozessdiagramm "`aggressive Einsteiger"'-Heuristik.}
+	\caption{Prozessdiagramm "`aggressive Einsteiger"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:AEH}
 \end{figure}
 Ist etwas Platz (siehe \ref{Tabelle der Typen}) in der Tür, so beginnt der aggressive Einsteiger mit der "`aggressiven Follower"'-Heuristik mit dem Einsteigen. Er hat also eine geringere Schwelle für das Einsteigen als normale oder defensive Einsteiger, die erst bei genügend Platz oder bei Ausstieg des letzten Aussteigers mit dem Einsteigen beginnen. Ist nicht ausreichend Platz in der Tür, so wird die aktuelle Position des Agenten überprüft. Ist dieser noch nicht im Wartebereich, so sucht der aggressive Einsteiger mit der "`aggressiven Platzsuche"'-Heuristik einen Platz in diesem (siehe \figurename \ref{fig:APH}). Ist bereits im Wartebereich so verbleibt er in seiner aktuellen Position.
@@ -448,7 +448,7 @@ Im Algorithmus wird als Schwelle für "`etwas Platz"' in der Tür das 0.8 Fache 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=1.0\textwidth]{pictures/model/algorithm/boarding/aggressive_boarding/aggressive_space_find_heuristic.png}
-	\caption{Prozessdiagramm "`aggressive Platzsuche"'-Heuristik.}
+	\caption{Prozessdiagramm "`aggressive Platzsuche"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:APH}
 \end{figure}
 Ist keine Person im Wartebereich, so wählt der aggressive Agent, genau wie ein defensiver oder normaler, einen Platz nah an der Tür als Zwischenziel. Anders als defensive und normale Typen, will der aggressive Einsteiger jedoch so weit wie möglich vorne stehen, deshalb sucht er nicht nach dem nächsten freien Platz. Stattdessen überprüft der Agent ob vor der ersten Person noch Platz ist, wobei seinem Körper auch leicht in die Tür ragen kann, wenn er sich auf diesen Platz stellt. Es ist also zu vermuten, dass für einen aggressiven Einsteiger auch Platz vor der ersten wartenden Person ist, wenn das 0.8 Fache seiner Körperbreite Platz hat. Ist hier jedoch weniger Platz, so sucht er nach einem Platz neben der ersten Person. Ist hier Platz vorhanden, so wählt er diesen als sein Zwischenziel, auch hier kann sein Körper leicht in die Tür ragen. Ist weder vor noch neben der ersten Person Platz, so sucht ein aggressiver Einsteiger nach einem Platz im "`Im Weg"'-Bereich. Dieser Bereich wurde in der Skizze der Zielbereiche für Einsteiger, \figurename \ref{fig:SkizzeEinsteiger}, bereits dargestellt. Ist hier Platz vorhanden, so wählt er wiederum diesen als Zwischenziel. Ist keiner der genannten Plätze vorhanden, so wählt der Agent als Zwischenziel den Platz hinter der letzten Person im Wartebereich. 
@@ -499,7 +499,7 @@ Der Ausstiegsprozess wird mit der "`Ausstiegsprozess"'-Heuristik umgesetzt. Dabe
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.8\textwidth]{pictures/model/algorithm/alight/alight_process.png}
-	\caption{Prozessdiagramm der Aussteiger: "`Ausstiegsprozess"'-Heuristik.}
+	\caption{Prozessdiagramm der Aussteiger: "`Ausstiegsprozess"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:AH}
 \end{figure}
 Wie in \figurename \ref{fig:AH} zu erkennen, wird die Startzeit des Aussteigers vor dem Ausstiegsprozess festgelegt. Dabei wird diese durch Zufall aus dem entsprechenden Intervall ausgewählt. Die Intervalle wurden hierbei durch die Auswertung in \ref{Startzeiten} ermittelt. Das Startzeitenintervall für defensive liegt zwischen $1.9$ und $2.1$ Sekunden. Für normale liegt es zwischen $1.6$ und $1.8$ Sekunden und für aggressive zwischen $1.3$ und $1.6$ Sekunden. Hierbei nehme ich an, dass die Werte im Intervall normal verteilt sind. Ist die Startzeit gewählt, so beginnt die "`Ausstiegsprozess"'-Heuristik. Dabei verbleibt die Person in ihrer aktuellen Position so lange nicht mehr Zeit seit der Türöffnung vergangen ist, als die Startzeit der Person. Wenn die Tür länger oder gleich der Startzeit geöffnet ist beginnt die Person mit der entsprechenden "`Follower"'-Heuristik den Ausstieg. Dabei wird die "`aggressive Follower"'-Heuristik für aggressive Typen verwendet. 
@@ -533,7 +533,7 @@ Das Platzmacher-Modell wird durch die "`Platzmachprozess"'-Heuristik umgesetzt, 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{pictures/model/algorithm/spacemaker/spacemaker_heuristic.png}
-	\caption{Prozessdiagramm der Platzmacher: "`Platzmachprozess"'-Heuristik.}
+	\caption{Prozessdiagramm der Platzmacher: "`Platzmachprozess"'-Heuristik. Quelle: Eigene Darstellung.}
 	\label{fig:PH}
 \end{figure}
 Befindet sich ein Platzmacher im Wagon, so wird die "`Ausstiegsprozess"'-Heuristik (\ref{AM}) verwendet. Will eine Person aussteigen, um Platz zu machen verhält sie sich wie ein Aussteiger. Sobald die Person den Wagon verlassen hat, verhält sie sich jedoch wie ein Einsteiger, sie sucht einen Platz im Wartebereich und steigt daraufhin wieder ein. Dazu wird die "`Einsteigeprozess"'-Heuristik verwendet (\ref{EM}).
