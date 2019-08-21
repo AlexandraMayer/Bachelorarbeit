@@ -93,7 +93,7 @@ res_lin = smf.ols(formula="time ~ persons", data=data_time).fit()
 \end{lstlisting}
 Die Variablen \texttt{time} und \texttt{persons} die durch das R-Style Formular übergeben werden sind \texttt{Arrays}. \texttt{Time} enthält die gemessenen Fahrgastwechselzeiten und \texttt{persons} die Anzahlen der Personen, die am Fahrgastwechsel beteiligt sind. Die Variable \texttt{data\_time} ist der \texttt{Dataframe} der Tabelle der Fahrgastwechselzeiten. Das Ergebnis \texttt{res\_lin} ist ein \texttt{RegressionResultWrapper}, der unter anderem die Schätzwerte enthält.
 
-Bei der Zusammenhangsanalyse habe ich festgestellt, dass die Daten, mit oder ohne Spätere, einen annähernd linearen Zusammenhang besitzen. Deshalb führe ich für die Daten ohne Später-Ein- und Später-Aussteiger nun eine lineare Einfachregression durch.\\
+Bei der Zusammenhangsanalyse habe ich festgestellt, dass die Daten, mit oder ohne spätere Personen, einen annähernd linearen Zusammenhang besitzen. Deshalb führe ich für die Daten ohne Später-Ein- und Später-Aussteiger nun eine lineare Einfachregression durch.\\
 Das Modell für die Zielvariable $Kernwechselzeit$ in Abhängigkeit der Kovariable $Kern\text{-}Personen$ (Einsteiger, Aussteiger und Platzmacher ohne Spätere) ist für die lineare Einfachregression also:
 \begin{equation}
 Kernwechselzeit_i = \beta_0 + \beta_1 \cdot Kern\text{-}Personen_i + \varepsilon_i
@@ -132,7 +132,7 @@ Dazu führe ich ebenfalls eine lineare Regression mit \texttt{statsmodel} durch.
 \begin{equation}
 Kernwechselzeit = \beta_0 + \beta_1 \cdot \log(Kern\text{-}Personen) + \beta_2 \cdot Kern\text{-}Personen
 \end{equation}
-Sieht man sich nur das Bestimmtheitsmaß der Regression an, so scheint diese Funktion auch zu den Daten zu passen. Der $R^2$-Wert hat sich für das Modell mit logarithmischem Anteil mit einem Wert von $0.9$ nicht verschlechtert. Auch der $p$-Wert bleibt bei der F-Statistik unverändert $\ll 0.01$. Das Zusammenspiel der Schätzwerte hat also einen Einfluss. Betrachtet man jedoch die $p$-Werte der t-Statistik für die einzelnen Schätzwerte, so wird deutlich, dass die lineare Einfachregression besser für die gegeben Daten geeignet ist, da die $p$-Wert von $\beta_1$ mit $0.02$ und $\beta_0$ mit $0.41$ das Signifikanzniveau überschreiten. Deshalb wird Nullhypothesen für $\beta_1$ und $\beta_0$ angenommen, die Parameter haben wahrscheinlich keinen Einfluss auf die Regression.
+Sieht man sich nur das Bestimmtheitsmaß der Regression an, so scheint diese Funktion auch zu den Daten zu passen. Der $R^2$-Wert hat sich für das Modell mit logarithmischem Anteil mit einem Wert von $0.9$ nicht verschlechtert. Auch der $p$-Wert bleibt bei der F-Statistik unverändert $\ll 0.01$. Das Zusammenspiel der Schätzwerte hat also einen Einfluss. Betrachtet man jedoch die $p$-Werte der t-Statistik für die einzelnen Schätzwerte, so wird deutlich, dass die lineare Einfachregression besser für die gegeben Daten geeignet ist, da die $p$-Wert von $\beta_1$ mit $0.02$ und $\beta_0$ mit $0.41$ das Signifikanzniveau überschreiten. Deshalb werden die Nullhypothesen für $\beta_1$ und $\beta_0$ angenommen, die Parameter haben wahrscheinlich keinen Einfluss auf die Regression.
 
 Die Fahrgastwechselzeit kann also mit der Funktion 
 \begin{equation}
