@@ -8,7 +8,6 @@
 \usepackage{hyphsubst}
 \usepackage{lastpage}
 %\usepackage{caption}
-\usepackage{todonotes}
 \usepackage{float}
 \usepackage{floatflt}
 \usepackage[hang,nooneline]{caption}
@@ -20,6 +19,8 @@
 %\usepackage[bookmarks=true,colorlinks=true,pagecolor=black,linktocpage=true]{hyperref}
 \usepackage{amsmath,amsfonts,amsthm}
 \usepackage[ruled,vlined]{algorithm2e}
+\SetAlFnt{\scriptsize}
+%\SetAlCapFnt{\large}
 %\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
 \usepackage{setspace}
 \usepackage{geometry}
@@ -28,7 +29,7 @@
 \usepackage{pspicture}
 %\usepackage[dvips,final]{graphicx}
 \usepackage{pdfpages}
-
+\usepackage[T1, hyphens]{url}
 \usepackage[
     bookmarks,
     bookmarksopen=true,
@@ -43,7 +44,8 @@
     plainpages=false, 
     pdfpagelabels,
     hypertexnames=false, 
-    linktocpage 
+    linktocpage,
+    breaklinks=true
 ]{hyperref}
 \usepackage{helvet}	
 \usepackage{listings}

@@ -42,46 +42,48 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 \chapter{Ausschnitte der Tabellen}
 \section{Tabelle der Fahrgastwechselzeiten}
 \DTLloadrawdb{times}{../Tabellen_Notebooks/Tabels/Times.csv}
-\begin{sidewaystable}[h!]
-	\centering
-	\begin{tabular}{ |p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.9 cm} p{1.9 cm} p{2.2 cm} p{1 cm} p{1 cm}|}
+\begin{sideways}
+\begin{minipage}{1.2\textwidth}
+\small
+\begin{tabular}{|p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.8 cm} p{1.8 cm} p{1.3 cm} p{1.8 cm} p{1 cm}|}
 		\hline
-		\bfseries Video & \bfseries arrival time & \bfseries station & \bfseries core alight  & \bfseries later alight & \bfseries core boarding & \bfseries later boarding & \bfseries spacemaker & \bfseries core time & \bfseries time \\
+		\bfseries Video & \bfseries arrival time & \bfseries station & \bfseries core alight  & \bfseries later alight & \bfseries core boarding & \bfseries later boarding & \bfseries space\-maker & \bfseries core time & \bfseries time \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{times}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{times}%{}{}%
 		{\video=Video,\aa=arrival time,\ab=station,\sp=core alight,\be=later alight,\b=core boarding,\s=later boarding,\d=spacemaker,\iw=core time,\t=time}
 		{
 		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
 	\end{tabular} \\
-	\begin{tabular}{|p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.9 cm} p{1.9 cm} p{2.2 cm} p{1 cm} p{1 cm}|}
+	\begin{tabular}{|p{1 cm} p{1.3 cm} p{1.2 cm} p{1.2 cm} p{1.2 cm} p{1.8 cm} p{1.8 cm} p{1.3 cm} p{1.8 cm} p{1 cm}|}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3183}]{times}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{times}
 		{\video=Video,\aa=arrival time,\ab=station,\sp=core alight,\be=later alight,\b=core boarding,\s=later boarding,\d=spacemaker,\iw=core time,\t=time}
 		{
 		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}			\\
 		\hline
 	\end{tabular}
-	\caption{Fahrgastwechselzeiten Tabelle: Zusatzmaterial \textsl{Times.csv}. Quelle: Eigene Tabelle.}
 	\label{tab:times}
-\end{sidewaystable}
+\captionof{table}{Fahrgastwechselzeiten Tabelle: Zusatzmaterial \textsl{Times.csv}.\\ Quelle: Eigene Tabelle.}
+\end{minipage}
+\end{sideways}
 \clearpage
 \section{Tabellen der Gruppen}
 \subsection{Tabelle der Gruppen für Aussteiger}
 \DTLloadrawdb{aGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsAlight.csv}
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+	\begin{tabular}{|p{1.5 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm}|}
 		\hline
 		\bfseries Video & \bfseries 1 & \bfseries 2 & \bfseries 3  & \bfseries 4 & \bfseries 5 & \bfseries 6  & \bfseries 11 \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{aGroup}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{aGroup}%{}{}%
 		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=11}
 		{
 		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}
 	\end{tabular} \\
-	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+	\begin{tabular}{|p{1.5 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm}|}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3185}]{aGroup}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{aGroup}
 		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=11}
 		{
 		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}\\
@@ -94,18 +96,18 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 \DTLloadrawdb{bGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsBoarding.csv}
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+	\begin{tabular}{|p{1.5 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm}|}
 		\hline
 		\bfseries Video & \bfseries 1 & \bfseries 2 & \bfseries 3  & \bfseries 4 & \bfseries 5 & \bfseries 6  & \bfseries 7 \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{bGroup}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{bGroup}%{}{}%
 		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=7}
 		{
 		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}
 	\end{tabular} 
-	\begin{tabular}{|p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm} p{1.5 cm}|}
+	\begin{tabular}{|p{1.5 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm} p{1.4 cm}|}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3185}]{bGroup}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{bGroup}
 		{\video=Video,\aa=1,\ab=2,\sp=3,\be=4,\f=5,\s=6,\e=7}
 		{
 		\\\video & \aa & \ab & \sp & \be & \f & \s & \e}\\
@@ -118,18 +120,18 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 \DTLloadrawdb{sGroup}{../Tabellen_Notebooks/Tabels/Groups/GroupsSpacemaker.csv}
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|p{3 cm} p{3 cm} p{3 cm} |}
+	\begin{tabular}{|p{2.5 cm} p{2 cm} p{2 cm} |}
 		\hline
 		\bfseries Video & \bfseries 1 & \bfseries 2  \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{sGroup}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{sGroup}%{}{}%
 		{\video=Video,\aa=1,\ab=2}
 		{
 		\\\video & \aa & \ab}
 	\end{tabular} \\
-	\begin{tabular}{|p{3 cm} p{3 cm} p{3 cm} |}
+	\begin{tabular}{|p{2.5 cm} p{2 cm} p{2 cm} |}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots 
-		\DTLforeach*[\DTLisgt{\video}{3185}]{sGroup}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{sGroup}
 		{\video=Video,\aa=1,\ab=2}
 		{
 		\\\video & \aa & \ab}\\
@@ -140,53 +142,32 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 \end{table}
 \section{Tabelle der Verhaltensweisen und Merkmale}
 \DTLloadrawdb{Verhalten}{../Tabellen_Notebooks/Tabels/Behaviors.csv}
-\begin{sidewaystable}[h!]
-	\centering
-	\begin{tabular}{ |p{1.05 cm} p{1.5 cm} p{2.7 cm} p{2.5 cm} p{2 cm} p{1 cm} p{0.7 cm} p{1.7 cm} p{1.5 cm} p{1.2 cm}|}
+\begin{sideways}
+\begin{minipage}{1.2\textwidth}
+\small
+	\begin{tabular}{|p{1 cm} p{1.2 cm} p{1.6 cm} p{1.4 cm} p{1.8 cm} p{1 cm} p{0.8 cm} p{1.8 cm} p{1.3 cm} p{1.1 cm}|}
 		\hline
-		\bfseries Video & \bfseries alight & \bfseries boarding & \bfseries spacemaker  & \bfseries boarding early & \bfseries bulky & \bfseries slow & \bfseries distracted  & \bfseries in way & \bfseries time \\
+		\bfseries Video & \bfseries alight & \bfseries boarding & \bfseries space\-maker  & \bfseries boarding early & \bfseries bulky & \bfseries slow & \bfseries distracted  & \bfseries in way & \bfseries time \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{Verhalten}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{Verhalten}%{}{}%
 		{\video=Video,\aa=alight,\ab=boarding,\sp=spacemaker,\be=boarding early,\b=bulky,\s=slow,\d=distracted,\iw=in way,\t=time}
 		{
 		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
 	\end{tabular} \\
-	\begin{tabular}{|p{1.05 cm} p{1.5 cm} p{2.7 cm} p{2.5 cm} p{2 cm} p{1 cm} p{0.7 cm} p{1.7 cm} p{1.5 cm} p{1.2 cm}|}
+	\begin{tabular}{|p{1 cm} p{1.2 cm} p{1.6 cm} p{1.4 cm} p{1.8 cm} p{1 cm} p{0.8 cm} p{1.8 cm} p{1.3 cm} p{1.1 cm}|}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3183}]{Verhalten}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{Verhalten}
 		{\video=Video,\aa=alight,\ab=boarding,\sp=spacemaker,\be=boarding early,\b=bulky,\s=slow,\d=distracted,\iw=in way,\t=time}
 		{
 		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}\\
 		\hline
 	\end{tabular}
-	\caption{Verhaltenstabelle: Zusatzmaterial \textsl{Behaviors.csv} Quelle: Eigene Tabelle.}
 	\label{tab:Vehalten}
-\end{sidewaystable}
+\captionof{table}{Verhaltenstabelle: Zusatzmaterial \textsl{Behaviors.csv}.\\ Quelle: Eigene Tabelle.}
+\end{minipage}
+\end{sideways}
 \clearpage
-\section{Tabelle der Typen}
-\DTLloadrawdb{Types}{../Tabellen_Notebooks/Tabels/PeopleTypes.csv}
-\begin{sidewaystable}[h!]
-	\centering
-	\begin{tabular}{ |p{1 cm} p{1.9 cm} p{1.9 cm} p{1.9 cm} p{2.1 cm} p{1.9 cm} p{2.1 cm} p{1.6 cm} p{1.5 cm} p{1.5 cm}|}
-		\hline
-		\bfseries Video & \bfseries boarding defensive & \bfseries alight defensive & \bfseries space-maker defensive  & \bfseries boarding aggressive & \bfseries alight aggressive & \bfseries space-maker aggressive & \bfseries boarding normal  & \bfseries alight normal & \bfseries space-maker normal \\
-		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{Types}%{}{}%
-		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
-		{
-		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
-	\end{tabular} \\
-	\begin{tabular}{|p{1 cm} p{1.9 cm} p{1.9 cm} p{1.9 cm} p{2.1 cm} p{1.9 cm} p{2.1 cm} p{1.6 cm} p{1.5 cm} p{1.5 cm}|}
-		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3183}]{Types}
-		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
-		{
-		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}\\
-		\hline
-	\end{tabular}
-	\caption{Typen von Prozesstypen: Zusatzmaterial \textsl{PeopleTypes.csv} Quelle: Eigene Tabelle.}
-	\label{tab:Types}
-\end{sidewaystable}
+\nopagebreak   
 \clearpage
 \section{Tabelle der Startzeiten}
 \DTLloadrawdb{Startingtime}{../Tabellen_Notebooks/Tabels/TimeAfterDoorOpening.csv}
@@ -196,14 +177,14 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 		\hline
 		\bfseries Video & \bfseries Type & \bfseries Opening & \bfseries First step  & \bfseries Time \\
 		\hline
-		\DTLforeach*[\value{DTLrowi}<10]{Startingtime}%{}{}%
+		\DTLforeach*[\value{DTLrowi}<9]{Startingtime}%{}{}%
 		{\video=Video,\aa=Type,\ab=Opening,\sp=First step,\be=Time}
 		{
 		\\\video & \aa & \ab & \sp & \be}
 	\end{tabular} \\
 	\begin{tabular}{|p{2 cm} p{2 cm} p{2 cm} p{2 cm} p{2 cm}|}
 		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
-		\DTLforeach*[\DTLisgt{\video}{3185}]{Startingtime}
+		\DTLforeach*[\DTLisgt{\video}{3190}]{Startingtime}
 		{\video=Video,\aa=Type,\ab=Opening,\sp=First step,\be=Time}
 		{
 		\\\video & \aa & \ab & \sp & \be}\\
@@ -212,4 +193,35 @@ Für den Wert von $R^2$ gilt: $0 \leq R^2 \leq 1$ (\cite{Fahrmeir.2009}). Für d
 	\caption{Startzeiten der Aussteiger für verschiedene Typen: Zusatzmaterial \textsl{TimeAfterDoorOpening.csv}. Quelle: Eigene Tabelle.}
 	\label{tab:Startingtime}
 \end{table}
+\clearpage
+\section{Tabelle der Typen}
+\clearpage
+\nopagebreak
+\DTLloadrawdb{Types}{../Tabellen_Notebooks/Tabels/PeopleTypes.csv}
+\clearpage
+\begin{sideways}
+\begin{minipage}{1.37\textwidth}
+\small
+	\begin{tabular}{|p{0.9 cm} p{1.8 cm} p{1.8 cm} p{1.8 cm} p{2.0 cm} p{1.8 cm} p{2.0 cm} p{1.5 cm} p{1.3 cm} p{1.5 cm}|}
+		\hline
+		\bfseries Video & \bfseries boarding defensive & \bfseries alight defensive & \bfseries space\-maker defensive  & \bfseries boarding aggressive & \bfseries alight aggressive & \bfseries space\-maker aggressive & \bfseries boarding normal  & \bfseries alight normal & \bfseries space\-maker normal \\
+		\hline
+		\DTLforeach*[\value{DTLrowi}<9]{Types}%{}{}%
+		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}
+	\end{tabular} \\
+	\begin{tabular}{|p{0.9 cm} p{1.8 cm} p{1.8 cm} p{1.8 cm} p{2.0 cm} p{1.8 cm} p{2.0 cm} p{1.5 cm} p{1.3 cm} p{1.5 cm}|}
+		\bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots & \bfseries \vdots
+		\DTLforeach*[\DTLisgt{\video}{3195}]{Types}
+		{\video=Video,\aa=boarding defensive,\ab=alight defensive,\sp=spacemaker defensive,\be=boarding aggressive,\b=alight aggressive,\s=spacemaker aggressive,\d=boarding normal,\iw=alight normal,\t=spacemaker normal}
+		{
+		\\\video & \aa & \ab & \sp & \be & \b & \s &\d & \iw & \t}\\
+		\hline
+	\end{tabular}
+	\label{tab:Types}
+\captionof{table}{Typen von Prozesstypen: Zusatzmaterial \textsl{PeopleTypes.csv}.\\ Quelle: Eigene Tabelle.}
+\end{minipage}
+\end{sideways}
+\clearpage
 \end{appendix}
